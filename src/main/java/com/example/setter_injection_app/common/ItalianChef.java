@@ -1,0 +1,31 @@
+package com.example.setter_injection_app.common;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ItalianChef implements Chef {
+
+    public ItalianChef() {
+        System.out.println("In constructor: " + getClass().getSimpleName());
+    }
+
+    @PostConstruct
+    public void initializeBean() {
+        System.out.println("bean initialized." + getClass().getSimpleName());
+    }
+
+    @PreDestroy
+    public void cleanup() {
+        System.out.println("Bean is about to be destroyed." + getClass().getSimpleName());
+    }
+
+    @Override
+    public String getDailyRecipe() {
+        return "Prepare pasta al pomodoro with fresh tomatoes and basil!";
+    }
+}
