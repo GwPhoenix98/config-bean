@@ -14,16 +14,6 @@ public class ItalianChef implements Chef {
         System.out.println("In constructor: " + getClass().getSimpleName());
     }
 
-    @PostConstruct
-    public void initializeBean() {
-        System.out.println("bean initialized." + getClass().getSimpleName());
-    }
-
-    @PreDestroy
-    public void cleanup() {
-        System.out.println("Bean is about to be destroyed." + getClass().getSimpleName());
-    }
-
     @Override
     public String getDailyRecipe() {
         return "Prepare pasta al pomodoro with fresh tomatoes and basil!";
