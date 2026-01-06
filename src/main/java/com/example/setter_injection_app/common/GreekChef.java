@@ -1,8 +1,6 @@
 package com.example.setter_injection_app.common;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class GreekChef implements Chef {
 
     public GreekChef() {
